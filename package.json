@@ -1,0 +1,38 @@
+{
+  "name": "xctrace-mcp",
+  "version": "0.1.0",
+  "description": "MCP server for recording and analyzing Xcode Instruments traces through xcrun xctrace.",
+  "type": "module",
+  "bin": {
+    "xctrace-mcp": "./dist/src/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "rm -rf dist && tsc -p tsconfig.build.json && chmod +x dist/src/index.js",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "tsx --test test/**/*.test.ts",
+    "lint": "npm run typecheck"
+  },
+  "keywords": [
+    "mcp",
+    "xcode",
+    "instruments",
+    "xctrace",
+    "performance"
+  ],
+  "author": "Rui Peres",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "^25.9.1",
+    "tsx": "^4.22.3",
+    "typescript": "^6.0.3"
+  }
+}
